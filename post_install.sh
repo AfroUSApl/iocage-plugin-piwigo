@@ -49,6 +49,7 @@ if [ -e "/root/.mysql_secret" ] ; then
    TMPPW=$(cat /root/.mysql_secret | grep -v "^#")
    echo "SQL Temp Password: $TMPPW"
 # Configure mysql db
+echo "ROOT Temp Password: $TMPPW"
 mysql -u root -p"${TMPPW}" --connect-expired-password <<-EOF
 ALTER USER 'root'@'localhost' IDENTIFIED BY '${PASS}';
 CREATE DATABASE ${DB} CHARACTER SET utf8;
@@ -65,7 +66,7 @@ else
    # Mysql <= 56 does not
 
 # Configure mysql
-mysql -u root -p <<-EOF
+mysql -u root <<-EOF
 ALTER USER 'root'@'localhost' IDENTIFIED BY '$TMPPW';
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 DELETE FROM mysql.user WHERE User='';
