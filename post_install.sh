@@ -99,4 +99,5 @@ service nginx restart 2>/dev/null
 echo "Database User: $USER" > /root/PLUGIN_INFO
 echo "Database Password: $PASS" >> /root/PLUGIN_INFO
 echo "Database Name: $DB" >> /root/PLUGIN_INFO
-echo "SQL Temp Password: $TMPPW" >> /root/PLUGIN_INFO
+echo "When receiving message: Cannot connect to server" >> /root/PLUGIN_INFO
+echo "Please change Host: to 127.0.0.1"
