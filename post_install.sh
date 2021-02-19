@@ -32,13 +32,6 @@ mkdir /usr/local/etc/php-fpm.d
 grep -qxF 'include "request_terminate_timeout=300"' /usr/local/etc/php-fpm.d/www.conf || echo 'include "request_terminate_timeout=300"' >> /usr/local/etc/php-fpm.d/www.conf
 # Editing PHP-FPM config file - php-fpm.conf
 grep -qxF 'include "include=/usr/local/etc/php-fpm.d/*.conf"' /usr/local/etc/php-fpm.conf || echo 'include "include=/usr/local/etc/php-fpm.d/*.conf"' >> /usr/local/etc/php-fpm.conf
-# Downloading modified main nginx config file
-fetch -o /usr/local/etc/nginx/nginx.conf https://raw.githubusercontent.com/AfroUSApl/piwigo/master/nginx.conf
-# Create an piwigo.example.com server block config file
-fetch -o /usr/local/etc/nginx/conf.d/piwigo.example.com.conf https://raw.githubusercontent.com/AfroUSApl/piwigo/master/nginx/conf.d/piwigo.example.com.conf
-# Create the piwigo php-fpm pool config file and WWW config file
-fetch -o /usr/local/etc/php-fpm.d/piwigo.example.com.conf https://raw.githubusercontent.com/AfroUSApl/piwigo/master/php-fpm.d/piwigo.example.com.conf
-fetch -o /usr/local/etc/php-fpm.d/www.conf https://raw.githubusercontent.com/AfroUSApl/piwigo/master/php-fpm.d/www.conf
 
 # Create user and database for Piwigo with unique password
 USER="piwigouser"
