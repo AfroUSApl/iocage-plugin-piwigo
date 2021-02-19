@@ -23,7 +23,7 @@ sed -i '' 's/.*post_max_size=.*/post_max_size=100M/' /usr/local/etc/php.ini
 sed -i '' 's/.*upload_max_filesize=.*/upload_max_filesize=100M/' /usr/local/etc/php.ini
 # recommended value of 512MB for php memory limit (avoid warning)
 sed -i '' 's/.*memory_limit=.*/memory_limit=512M/' /usr/local/etc/php.ini
-sed -i '' 's/.*date.timezone=.*/date.timezone="Europe/Amsterdam"/' /usr/local/etc/php.ini
+sed -i '' 's/.*date.timezone=.*/date.timezone="Europe\/London"/' /usr/local/etc/php.ini
 
 # Create a configuration directory to make managing individual server blocks easier
 mkdir /usr/local/etc/nginx/conf.d
@@ -98,3 +98,4 @@ service nginx restart 2>/dev/null
 echo "Database User: $USER" > /root/PLUGIN_INFO
 echo "Database Password: $PASS" >> /root/PLUGIN_INFO
 echo "Database Name: $DB" >> /root/PLUGIN_INFO
+echo "SQL Temp Password: $TMPPW" >> /root/PLUGIN_INFO
