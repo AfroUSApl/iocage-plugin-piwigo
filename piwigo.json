@@ -2,7 +2,7 @@
     "name": "Piwigo",
     "plugin_schema": "2",
     "release": "11.4-RELEASE",
-    "artifact": "https://github.com/AfroUSApl/piwigo.git",
+    "artifact": "https://github.com/AfroUSApl/iocage-plugin-piwigo.git",
     "official": false,
     "properties": {
         "vnet": 1,
