@@ -57,14 +57,13 @@ CREATE USER '${USER}'@'localhost' IDENTIFIED BY '${PASS}';
 GRANT ALL PRIVILEGES ON ${DB}.* TO '${USER}'@'localhost';
 FLUSH PRIVILEGES;
 EOF
-
 # Make the default log directory
 mkdir /var/log/zm
 chown www:www /var/log/zm
 
 else
-   # Mysql <= 56 does not
 
+# Mysql <= 56 does not
 # Configure mysql
 mysql -u root <<-EOF
 ALTER USER 'root'@'localhost' IDENTIFIED BY '$TMPPW';
@@ -99,5 +98,3 @@ service nginx restart 2>/dev/null
 echo "Database User: $USER" > /root/PLUGIN_INFO
 echo "Database Password: $PASS" >> /root/PLUGIN_INFO
 echo "Database Name: $DB" >> /root/PLUGIN_INFO
-echo "When receiving message: Cannot connect to server" >> /root/PLUGIN_INFO
-echo "Please change Host: to 127.0.0.1"
