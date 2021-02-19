@@ -42,6 +42,8 @@ echo "$USER" > /root/dbuser
 export LC_ALL=C
 cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1 > /root/dbpassword
 PASS=`cat /root/dbpassword`
+echo "Database User: $USER"
+echo "Database Password: $PASS"
 if [ -e "/root/.mysql_secret" ] ; then
    # Mysql > 57 sets a default PW on root
    TMPPW=$(cat /root/.mysql_secret | grep -v "^#")
@@ -93,6 +95,6 @@ sleep 5
 service nginx restart 2>/dev/null
 
 # Add plugin detals to info file available in TrueNAS Plugin Additional Info
-echo "Database User: $USER" >> /root/PLUGIN_INFO
+echo "Database User: $USER" > /root/PLUGIN_INFO
 echo "Database Password: $PASS" >> /root/PLUGIN_INFO
-echo "Database Name: $DB" > /root/PLUGIN_INFO
+echo "Database Name: $DB" >> /root/PLUGIN_INFO
