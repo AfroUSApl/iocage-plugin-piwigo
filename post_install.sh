@@ -84,7 +84,7 @@ cd /usr/local/www
 git clone -b 11.x https://github.com/Piwigo/Piwigo.git
 # Create Piwigo data directory with permission
 mkdir /usr/local/www/Piwigo/_data
-chmod -R 777 /usr/local/Piwigo/_data
+chmod -R 777 /usr/local/www/Piwigo/_data
 # Change the ownership of the whole Piwigo directory
 chown -R piwigo:www /usr/local/www/Piwigo
 
