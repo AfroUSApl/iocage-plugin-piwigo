@@ -29,9 +29,9 @@ sed -i '' 's/.*date.timezone=.*/date.timezone="Europe/Amsterdam"/' /usr/local/et
 mkdir /usr/local/etc/nginx/conf.d
 mkdir /usr/local/etc/php-fpm.d
 # Editing WWW config file - www.conf
-grep -qxF 'include "request_terminate_timeout=300"' /usr/local/etc/php-fpm.d/www.conf || echo 'include "request_terminate_timeout=300"' >> /usr/local/etc/php-fpm.d/www.conf
+grep -qxF 'request_terminate_timeout=300' /usr/local/etc/php-fpm.d/www.conf || echo 'request_terminate_timeout=300' >> /usr/local/etc/php-fpm.d/www.conf
 # Editing PHP-FPM config file - php-fpm.conf
-grep -qxF 'include "include=/usr/local/etc/php-fpm.d/*.conf"' /usr/local/etc/php-fpm.conf || echo 'include "include=/usr/local/etc/php-fpm.d/*.conf"' >> /usr/local/etc/php-fpm.conf
+grep -qxF 'include=/usr/local/etc/php-fpm.d/*.conf' /usr/local/etc/php-fpm.conf || echo 'include=/usr/local/etc/php-fpm.d/*.conf' >> /usr/local/etc/php-fpm.conf
 
 # Create user and database for Piwigo with unique password
 USER="piwigouser"
@@ -42,8 +42,6 @@ echo "$USER" > /root/dbuser
 export LC_ALL=C
 cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1 > /root/dbpassword
 PASS=`cat /root/dbpassword`
-echo "Database User: $USER"
-echo "Database Password: $PASS"
 if [ -e "/root/.mysql_secret" ] ; then
    # Mysql > 57 sets a default PW on root
    TMPPW=$(cat /root/.mysql_secret | grep -v "^#")
@@ -70,6 +68,7 @@ UPDATE mysql.user SET Password=PASSWORD('${PASS}') WHERE User='root';
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 DELETE FROM mysql.user WHERE User='';
 DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
+
 CREATE USER '${USER}'@'localhost' IDENTIFIED BY '${PASS}';
 CREATE DATABASE ${DB} CHARACTER SET utf8;
 GRANT ALL PRIVILEGES ON *.* TO '${USER}'@'localhost' WITH GRANT OPTION;
