@@ -12,6 +12,9 @@ Second tip is to set your own date and time location in PHP.INI, as for this ins
 
 Some of the post installation settings I have tuned for:
 
+
+    
+Nginx
 PHP
     date.timezone = "Europe/London"
     max_execution_time = 300
@@ -19,7 +22,7 @@ PHP
     post_max_size = 100M
     upload_max_filesize = 100M
     memory_limit = 512M
-    
+
 Nginx
     proxy_connect_timeout 600s;
     proxy_send_timeout 600s;
