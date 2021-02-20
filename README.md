@@ -19,13 +19,8 @@ PHP
     post_max_size = 100M
     upload_max_filesize = 100M
     memory_limit = 512M
-
-
-
-pm.max_children = 35
-
     
-    Nginx
+Nginx
     proxy_connect_timeout 600s;
     proxy_send_timeout 600s;
     proxy_read_timeout 600s;
