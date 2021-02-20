@@ -1,6 +1,7 @@
 # iocage-plugin-piwigo
-![Piwigo iocage Plugin]
-(https://imgur.com/p53XnmO)
+
+![Piwigo](https://i.imgur.com/p53XnmOm.png)
+
 This is iocage plugin to create Piwigo, an open source photo gallery software for the web. Designed for organisations, teams and individuals.
 More details at http://piwigo.org
 
