@@ -22,6 +22,7 @@ Second tip is to set your own date and time location in PHP.INI, as for this ins
     memory_limit = 512M
 ```
 <h6>Nginx
+
 ```
     proxy_connect_timeout 600s
     proxy_send_timeout 600s
