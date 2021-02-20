@@ -12,13 +12,7 @@ Second tip is to set your own date and time location in PHP.INI, as for this ins
 
 Some of the post installation settings I have tuned for:
 
-
-
-
-
-
-
-PHP
+'PHP
     date.timezone = "Europe/London"
     max_execution_time = 300
     max_input_time = 300
@@ -38,5 +32,5 @@ Nginx
     pm.min_spare_servers = 15
     pm.max_spare_servers = 20
 
-    request_terminate_timeout = 300
+    request_terminate_timeout = 300'
 
