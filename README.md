@@ -12,7 +12,7 @@ Second tip is to set your own date and time location in PHP.INI, as for this ins
 
 Some of the post installation settings I have tuned for:
 
-'PHP
+'<PHP>'
     date.timezone = "Europe/London"
     max_execution_time = 300
     max_input_time = 300
@@ -20,7 +20,7 @@ Some of the post installation settings I have tuned for:
     upload_max_filesize = 100M
     memory_limit = 512M
 
-Nginx
+'<Nginx
     proxy_connect_timeout 600s;
     proxy_send_timeout 600s;
     proxy_read_timeout 600s;
@@ -32,5 +32,5 @@ Nginx
     pm.min_spare_servers = 15
     pm.max_spare_servers = 20
 
-    request_terminate_timeout = 300'
+    request_terminate_timeout = 300>'
 
