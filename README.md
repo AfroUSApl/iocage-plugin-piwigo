@@ -7,7 +7,7 @@ More details at http://piwigo.org
 
 Tip 1. Please remember to read info in **TrueNAS / Plugins / Piwigo / POST INSTALL NOTES** - to access info with DB user and DB password.
 Piwigo first installation page will set Host: as localhost, usually this needs to be changed to 127.0.0.1
-**   Host: 127.0.0.1**
+>   Host: 127.0.0.1
 
 Tip 2. Please set your own date/time location in PHP.INI, as for this installation I have chosen Europe/London ;)
 
