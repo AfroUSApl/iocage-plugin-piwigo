@@ -12,6 +12,10 @@ Second tip is to set your own date and time location in PHP.INI, as for this ins
 
 Some of the post installation settings I have tuned for:
 
+# This is an <h1> tag
+## This is an <h2> tag
+###### This is an <h6> tag
+
 PHP
     date.timezone = "Europe/London"
     max_execution_time = 300
