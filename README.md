@@ -11,7 +11,13 @@ Piwigo first installation page will set Host: as localhost, usually this needs t
 Second tip is to set your own date and time location in PHP.INI, as for this installation I have chosen Europe/London ;)
 
 Some of the post installation settings I have tuned for:
-[CODE]
+
+
+
+
+
+
+
 PHP
     date.timezone = "Europe/London"
     max_execution_time = 300
@@ -33,4 +39,4 @@ Nginx
     pm.max_spare_servers = 20
 
     request_terminate_timeout = 300
-[/CODE]
+
