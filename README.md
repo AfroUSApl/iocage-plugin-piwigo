@@ -7,11 +7,11 @@ I have tested this plugin couple of times on my TrueNAS 12.2 as a 12.2-RELEASE a
 
 Please remember to read info in TrueNAS / Plugins / Piwigo / POST INSTALL NOTES - to access info with DB user and DB password.
 Piwigo first installation page will set Host: as localhost, usually this needs to be changed to 127.0.0.1
- Host: 127.0.0.1
-
+   Host: 127.0.0.1
 Second tip is to set your own date and time location in PHP.INI, as for this installation I have chosen Europe/London ;)
 
 Some of the post installation settings I have tuned for:
+
 PHP
     date.timezone = "Europe/London"
     max_execution_time = 300
