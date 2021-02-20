@@ -95,6 +95,7 @@ sleep 5
 service nginx restart 2>/dev/null
 
 # Add plugin detals to info file available in TrueNAS Plugin Additional Info
-echo "Database User: $USER" > /root/PLUGIN_INFO
+echo "Host: 127.0.0.1" > /root/PLUGIN_INFO
+echo "Database User: $USER" >> /root/PLUGIN_INFO
 echo "Database Password: $PASS" >> /root/PLUGIN_INFO
 echo "Database Name: $DB" >> /root/PLUGIN_INFO
