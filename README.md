@@ -3,7 +3,7 @@
 This is iocage plugin to create Piwigo, an open source photo gallery software for the web. Designed for organisations, teams and individuals.
 More details at http://piwigo.org
 
-I have tested this plugin couple of times on my TrueNAS 12.2 as a 12.2-RELEASE and 11.4-RELEASE, all seems to work well.
+*I have tested this plugin couple of times on my TrueNAS 12.2 as a 12.2-RELEASE and 11.4-RELEASE, all seems to work well.*
 
 Please remember to read info in TrueNAS / Plugins / Piwigo / POST INSTALL NOTES - to access info with DB user and DB password.
 Piwigo first installation page will set Host: as localhost, usually this needs to be changed to 127.0.0.1
