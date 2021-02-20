@@ -25,11 +25,11 @@ PHP
     memory_limit = 512M
 
 Nginx
-    proxy_connect_timeout 600s;
-    proxy_send_timeout 600s;
-    proxy_read_timeout 600s;
-    fastcgi_send_timeout 600s;
-    fastcgi_read_timeout 600s;
+    proxy_connect_timeout = 600s
+    proxy_send_timeout = 600s
+    proxy_read_timeout = 600s
+    fastcgi_send_timeout = 600s
+    fastcgi_read_timeout = 600s
 
     pm.max_children = 35
     pm.start_servers = 15
