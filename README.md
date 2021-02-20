@@ -40,3 +40,5 @@ Tip 2. Please set your own date/time location in PHP.INI, as for this installati
 
     request_terminate_timeout = 300
 ```
+
+![Piwigo Gallery View - Theme Modus](https://i.imgur.com/OfVd8fUl.jpg)
