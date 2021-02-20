@@ -16,24 +16,24 @@ Some of the post installation settings I have tuned for:
 ## This is an <h2> tag
 ###### This is an <h6> tag
 
-######PHP
-<h6>    date.timezone = "Europe/London"
-<h6>    max_execution_time = 300
-<h6>    max_input_time = 300
-<h6>    post_max_size = 100M
-<h6>    upload_max_filesize = 100M
-<h6>    memory_limit = 512M
+######PHP<h6>
+    date.timezone = "Europe/London"
+    max_execution_time = 300
+    max_input_time = 300
+    post_max_size = 100M
+    upload_max_filesize = 100M
+    memory_limit = 512M
 
-######Nginx
-<h6>    proxy_connect_timeout 600s
-<h6>    proxy_send_timeout 600s
-<h6>    proxy_read_timeout 600s
-<h6>    fastcgi_send_timeout 600s
-<h6>    fastcgi_read_timeout 600s
+######Nginx<h6>
+    proxy_connect_timeout 600s
+    proxy_send_timeout 600s
+    proxy_read_timeout 600s
+    fastcgi_send_timeout 600s
+    fastcgi_read_timeout 600s
 
-<h6>    pm.max_children = 35
-<h6>    pm.start_servers = 15
-<h6>    pm.min_spare_servers = 15
-<h6>    pm.max_spare_servers = 20
+    pm.max_children = 35
+    pm.start_servers = 15
+    pm.min_spare_servers = 15
+    pm.max_spare_servers = 20
 
-<h6>    request_terminate_timeout = 300
+    request_terminate_timeout = 300
