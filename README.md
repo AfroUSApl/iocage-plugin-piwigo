@@ -10,7 +10,7 @@ Piwigo first installation page will set Host: as localhost, usually this needs t
    Host: 127.0.0.1
 Second tip is to set your own date and time location in PHP.INI, as for this installation I have chosen Europe/London ;)
 
-## Some of the post installation settings I have tuned for:
+## Some of the post installation settings I have tuned for Piwigo with large photo database (over 50k):
 <h6> PHP
 
 ```
