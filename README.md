@@ -17,16 +17,16 @@ Some of the post installation settings I have tuned for:
 ###### This is an <h6> tag
 
 PHP
-'''
+```
     date.timezone = "Europe/London"
     max_execution_time = 300
     max_input_time = 300
     post_max_size = 100M
     upload_max_filesize = 100M
     memory_limit = 512M
-'''
+```
 Nginx
-'''
+```
     proxy_connect_timeout 600s
     proxy_send_timeout 600s
     proxy_read_timeout 600s
@@ -39,4 +39,4 @@ Nginx
     pm.max_spare_servers = 20
 
     request_terminate_timeout = 300
-'''
+```
