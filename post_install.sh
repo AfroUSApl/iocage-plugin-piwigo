@@ -79,9 +79,9 @@ FLUSH PRIVILEGES;
 EOF
 fi
 
-# Download Piwigo version 11.x from GitHub
+# Download Piwigo version 12.x from GitHub
 cd /usr/local/www
-git clone -b 11.x https://github.com/Piwigo/Piwigo.git
+git clone -b 12.x https://github.com/Piwigo/Piwigo.git
 # Create Piwigo data directory with permission
 mkdir /usr/local/www/Piwigo/_data
 chmod -R 777 /usr/local/www/Piwigo/_data
