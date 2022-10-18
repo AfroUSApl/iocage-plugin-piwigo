@@ -22,6 +22,7 @@
         "php74-session",
         "php74-zip",
         "php74-zlib",
+        "php74-json",
         "finfo",
         "php74-fileinfo"
     ],
