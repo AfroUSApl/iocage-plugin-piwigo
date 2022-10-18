@@ -24,6 +24,12 @@ Tip 2. Please set your own date/time location in PHP.INI, as for this installati
     upload_max_filesize = 100M
     memory_limit = 512M
 ```
+Enable this extension for mysqli in PHP.ini
+
+```
+    extension=mysqli
+```
+
 <h6>Nginx
 
 ```
@@ -40,6 +46,10 @@ Tip 2. Please set your own date/time location in PHP.INI, as for this installati
 
     request_terminate_timeout = 300
 ```
+
+You should manually edit PHP.INI to add this extension
+
+extension=mysqli
 
 <h2> <h2>Gallery View
 
