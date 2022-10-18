@@ -24,6 +24,10 @@ Tip 2. Please set your own date/time location in PHP.INI, as for this installati
     upload_max_filesize = 100M
     memory_limit = 512M
 ```
+Enable this extension for mysqli in PHP.ini
+
+```
+
 <h6>Nginx
 
 ```
