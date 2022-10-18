@@ -24,6 +24,7 @@ sed -i '' 's/.*upload_max_filesize = .*/upload_max_filesize=100M/' /usr/local/et
 # recommended value of 512MB for php memory limit (avoid warning)
 sed -i '' 's/.*memory_limit = .*/memory_limit = 512M/' /usr/local/etc/php.ini
 sed -i '' 's/.*;date.timezone =.*/date.timezone = "Europe\/London"/' /usr/local/etc/php.ini
+sed -i '' 's/.*;extension = mysqli.*/extension = mysqli/' /usr/local/etc/php.ini
 
 # Create a configuration directory to make managing individual server blocks easier
 mkdir /usr/local/etc/nginx/conf.d
