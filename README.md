@@ -47,6 +47,10 @@ Enable this extension for mysqli in PHP.ini
     request_terminate_timeout = 300
 ```
 
+You should manually edit PHP.INI to add this extension
+
+extension=mysqli
+
 <h2> <h2>Gallery View
 
 ![Piwigo Gallery View - Theme Modus](https://i.imgur.com/OfVd8fUl.jpg)
