@@ -27,6 +27,8 @@ Tip 2. Please set your own date/time location in PHP.INI, as for this installati
 Enable this extension for mysqli in PHP.ini
 
 ```
+    extension=mysqli
+```
 
 <h6>Nginx
 
