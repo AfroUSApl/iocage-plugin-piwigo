@@ -82,7 +82,7 @@ fi
 
 # Download Piwigo version 11.x from GitHub
 cd /usr/local/www
-git clone -b 13.x https://github.com/Piwigo/Piwigo.git
+git clone -single-branch -branch master https://github.com/Piwigo/Piwigo.git
 # Create Piwigo data directory with permission
 mkdir /usr/local/www/Piwigo/_data
 chmod -R 777 /usr/local/www/Piwigo/_data
