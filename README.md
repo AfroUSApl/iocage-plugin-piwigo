@@ -13,6 +13,13 @@ Piwigo first installation page will set Host: as localhost, usually this needs t
 
 Tip 2. Please set your own date/time location in PHP.INI, as for this installation I have chosen Europe/London ;)
 
+To install Piwigo plugin manually from the internet:
+
+> iocage fetch -P piwigo -g https://github.com/AfroUSApl/iocage-plugin-piwigo ip4_addr="interface|IPaddress"
+
+where *interface* is the name of the active network interface and *IP address* is the desired IP address for the plugin. For example, ip4_addr="igb0|192.168.0.91"
+
+
 ## Some of the post installation settings I have tuned for Piwigo:
 <h6> PHP
 
