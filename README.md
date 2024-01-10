@@ -59,3 +59,26 @@ Enable this extension for mysqli in PHP.ini
 ![Piwigo Gallery View - Theme Modus](https://i.imgur.com/OfVd8fUl.jpg)
 
 ![Piwigo Dashboard View](https://i.imgur.com/hPlxgwbl.jpg)
+
+Update... 9/1/2024
+
+I sucesfully updated my iocage 12.2 to 13.1, this is my procedure:
+
+<h6>outside iocage
+
+```
+iocage upgrade -r 13.1 piwigo
+
+Note: This will take some time
+- Type "y" for yes when inquiries occur
+- Type "q" for "quit" when the validation list appears, you may need to type it several times depending on the number of affected items
+- Type "y" for yes for any additional inquiries
+```
+
+<h6>inside the iocage
+
+```
+pkg update && pkg upgrade -y
+
+pkg install php83 php83-session php83-mysqli nginx mariadb105-server ImageMagick7-nox11 git php83 php83-exif php83-filter php83-gd php83-mbstring php83-session php83-zip php83-zlib php83-pecl-json_post-1.1.0 finfo php83-fileinfo
+```
