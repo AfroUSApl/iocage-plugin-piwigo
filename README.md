@@ -61,8 +61,8 @@ Enable this extension for mysqli in PHP.ini
 ![Piwigo Dashboard View](https://i.imgur.com/hPlxgwbl.jpg)
 
 ## Update... 9/1/2024
-
-I sucesfully updated my iocage 12.2 to 13.1, this is my procedure:
+sucesfully
+I successfully updated my iocage R 12.2 to R 13.1, this is my procedure:
 <h6>outside iocage
 
 ```
