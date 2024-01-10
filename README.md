@@ -83,4 +83,4 @@ pkg install php83 php83-session php83-mysqli nginx mariadb105-server ImageMagick
 ```
 Than restart iocage and log in to your gallery. I had an option to upgrade Piwigo to 14.1.0 ;)
 
-![Piwigo Maintenance View](https://i.imgur.com/3v8ofnBl.png)
+![Piwigo Maintenance View](https://i.imgur.com/3v8ofnBm.png)
