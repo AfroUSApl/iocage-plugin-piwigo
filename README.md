@@ -1,4 +1,4 @@
-# iocage-plugin-piwigo
+# iocage-plugin-piwigo auto-installation script v1.4
 
 Piwigo 16.2.0 jail installer for **TrueNAS CORE 13 U7**  
 Release target: **13.5-RELEASE**  
