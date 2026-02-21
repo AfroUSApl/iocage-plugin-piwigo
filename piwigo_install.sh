@@ -20,7 +20,7 @@ set -u   # safer, but no auto-exit
 # Load configuration and helpers - FOR EDIT
 # -------------------------------------------------
 
-JAIL_NAME="piwigo135"			# your jail name
+JAIL_NAME="Piwigo135"			# your jail name
 RELEASE="13.5-RELEASE"			# release you want to install
 INTERFACE="vnet0"			# network interface of jail, check you other jails for clues :)
 TIMEZONE="Europe/London"		# set your timezone
