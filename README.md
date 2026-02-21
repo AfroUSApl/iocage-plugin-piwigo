@@ -21,7 +21,7 @@ This script installs:
 - Jail: 13.5-RELEASE
 - Piwigo 16.2.0
 
-![Piwigo First Installation Page](images/first-install.jpg)
+![Piwigo First Installation Page](images/firts-install.jpg)
 
 ---
 
