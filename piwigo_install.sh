@@ -107,6 +107,19 @@ iocage exec ${JAIL_NAME} pkg install -y \
   ffmpeg \
   curl
 
+# -------------------------------------------------
+# MariaDB tuning for Piwigo
+# -------------------------------------------------
+cat <<EOF | iocage exec ${JAIL_NAME} tee /usr/local/etc/mysql/conf.d/piwigo.cnf >/dev/null
+[mysqld]
+bind-address=127.0.0.1
+innodb_buffer_pool_size=256M
+innodb_log_file_size=64M
+max_connections=100
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+EOF
+
 # Enable services
 iocage exec ${JAIL_NAME} sysrc mysql_enable=YES
 iocage exec ${JAIL_NAME} sysrc php_fpm_enable=YES
@@ -205,6 +218,7 @@ iocage exec ${JAIL_NAME} sed -i '' 's/max_execution_time = .*/max_execution_time
 iocage exec ${JAIL_NAME} sed -i '' 's/post_max_size = .*/post_max_size = 100M/' /usr/local/etc/php.ini
 iocage exec ${JAIL_NAME} sed -i '' 's/upload_max_filesize = .*/upload_max_filesize = 100M/' /usr/local/etc/php.ini
 iocage exec ${JAIL_NAME} sed -i '' 's/memory_limit = .*/memory_limit = 512M/' /usr/local/etc/php.ini
+iocage exec ${JAIL_NAME} sed -i '' 's/max_input_vars = .*/max_input_vars = 5000/' /usr/local/etc/php.ini
 iocage exec ${JAIL_NAME} sed -i '' "s|;date.timezone =.*|date.timezone = ${TIMEZONE}|" /usr/local/etc/php.ini
 
 echo "Installing Piwigo..."
