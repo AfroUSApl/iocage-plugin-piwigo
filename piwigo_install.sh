@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # =================================================
-# Piwigo Jail Installer v1.2
+# Piwigo Jail Installer v1.4
 # TrueNAS CORE 13.5-RELEASE
 # Caddy + PHP 8.3 + MariaDB 10.11
 # =================================================

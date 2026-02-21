@@ -2,7 +2,7 @@
 
 Piwigo 16.2.0 jail installer for **TrueNAS CORE 13 U7**  
 Release target: **13.5-RELEASE**  
-Script version: **v1.2**
+Script version: **v1.4**
 
 This script installs:
 
@@ -21,7 +21,7 @@ This script installs:
 - Jail: 13.5-RELEASE
 - Piwigo 16.2.0
 
-![Piwigo First Installation Page](images/firts-install.jpg)
+![Piwigo First Installation Page](images/first-install.jpg)
 
 ---
 
@@ -185,7 +185,7 @@ request_terminate_timeout = 300
 
 These settings are optional and depend on your RAM and CPU.
 
--# MariaDB Tuning (Optional Advanced)
+# MariaDB Tuning (Optional Advanced)
 
 The installer applies safe and performance-oriented MariaDB settings
 via a dedicated configuration file:
@@ -205,6 +205,33 @@ max_connections=100
 character-set-server=utf8mb4
 collation-server=utf8mb4_unicode_ci
 ```
+
+### What These Settings Do
+
+**bind-address=127.0.0.1**
+- Restricts MariaDB to listen only inside the jail
+- Prevents external network access to the database
+- Improves security (recommended for single-jail deployments)
+
+**innodb_buffer_pool_size**
+- The most important performance setting
+- Controls how much RAM is used for caching database data
+- Larger values improve performance for bigger galleries
+
+**innodb_log_file_size**
+- Controls InnoDB write log size
+- Larger values improve write performance for uploads and metadata updates
+
+**max_connections=100**
+- Maximum simultaneous database connections
+- More than sufficient for typical Piwigo usage
+
+**character-set-server / collation-server**
+- Forces full UTF-8 (utf8mb4) support
+- Prevents issues with emojis and extended characters
+- Strongly recommended
+
+---
 
 ### Recommended Values Based on Jail RAM
 
