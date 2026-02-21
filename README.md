@@ -43,20 +43,21 @@ includes/piwigo_install.sh
 ```
 
 Set your own veriables:
-
-- JAIL_NAME="Piwigo135"				# your jail name
-- RELEASE="13.5-RELEASE"			# release you want to install
-- INTERFACE="vnet0"				# network interface of jail, check you other jails for clues :)
-- TIMEZONE="Europe/London"			# set your timezone
-- APP_NAME="Piwigo"				# name for Piwigo-Info.txt file with all credentials
-- DB_TYPE="MariaDB"				# type of maria database
-- DB_NAME="piwigo"				# name of database used by Piwigo
-- DB_USER="piwigo"				# name of user for database used by Piwigo
-- DB_ROOT_PASS=$(openssl rand -base64 15)	# autogenerate password for database root
-- DB_PASS=$(openssl rand -base64 15)		# autogenerate password for database user
-- PHP_VERSION="83"				# version of PHP you want to install
-- MARIADB_VERSION="1011"			# version of mariadb you want to install
-- REINSTALL="false"				# is it reinstal of Piwigo or fresh new Piwigo install
+```
+- JAIL_NAME="Piwigo135"                    # your jail name
+- RELEASE="13.5-RELEASE"                   # release you want to install
+- INTERFACE="vnet0"                        # network interface of jail, check you other jails for clues :)
+- TIMEZONE="Europe/London"                 # set your timezone
+- APP_NAME="Piwigo"                        # name for Piwigo-Info.txt file with all credentials
+- DB_TYPE="MariaDB"                        # type of maria database
+- DB_NAME="piwigo"                         # name of database used by Piwigo
+- DB_USER="piwigo"                         # name of user for database used by Piwigo
+- DB_ROOT_PASS=$(openssl rand -base64 15)  # autogenerate password for database root
+- DB_PASS=$(openssl rand -base64 15)       # autogenerate password for database user
+- PHP_VERSION="83"                         # version of PHP you want to install
+- MARIADB_VERSION="1011"                   # version of mariadb you want to install
+- REINSTALL="false"                        # is it reinstal of Piwigo or fresh new Piwigo install
+```
 
 ---
 
