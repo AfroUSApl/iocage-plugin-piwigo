@@ -305,7 +305,7 @@ Dashboard view:
 # Version
 
 - TrueNAS Target: 13.5-RELEASE
-- Script Version: v1.2
+- Script Version: v1.4
 - Piwigo Version: 16.2.0
 
 ---
