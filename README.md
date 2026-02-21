@@ -1,87 +1,238 @@
 # iocage-plugin-piwigo
 
-This is iocage plugin to create Piwigo 14.x, an open source photo gallery software for the web. Designed for organisations, teams and individuals.
-More details at http://piwigo.org
+Piwigo 16.2.0 jail installer for **TrueNAS CORE 13 U7**  
+Release target: **13.5-RELEASE**  
+Script version: **v1.2**
 
-*I have tested this plugin couple of times on my TrueNAS 13 U5 as a **13.1-RELEASE**, all seems to work well.*
+This script installs:
 
-![Piwigo Installation Successful](https://i.imgur.com/p53XnmOl.png)
+- Piwigo 16.2.0
+- MariaDB 10.11
+- PHP 8.3
+- Caddy Web Server
+- ImageMagick + ffmpeg support
+- Persistent ZFS database storage
 
-Tip 1. Please remember to read info in **TrueNAS / Plugins / Piwigo / POST INSTALL NOTES** - to access info with DB user and DB password.
-Piwigo first installation page will set Host: as localhost, usually this needs to be changed to 127.0.0.1
->   Host: 127.0.0.1
+---
 
-Tip 2. Please set your own date/time location in PHP.INI, as for this installation I have chosen Europe/London ;)
+## ✅ Tested On
 
-To install Piwigo plugin manually from the internet:
+- TrueNAS CORE 13 U7
+- Jail: 13.5-RELEASE
+- Piwigo 16.2.0
 
-> iocage fetch -P piwigo -g https://github.com/AfroUSApl/iocage-plugin-piwigo ip4_addr="interface|IPaddress"
+![Piwigo Installation Successful](images/first_install.jpg)
 
-where *interface* is the name of the active network interface and *IP address* is the desired IP address for the plugin. For example, ip4_addr="igb0|192.168.0.91"
+---
 
+# Installation
 
-## Some of the post installation settings I have tuned for Piwigo:
-<h6> PHP
-
-```
-    date.timezone = "Europe/London"
-    max_execution_time = 300
-    max_input_time = 300
-    post_max_size = 100M
-    upload_max_filesize = 100M
-    memory_limit = 512M
-```
-Enable this extension for mysqli in PHP.ini
+### 1️⃣ Clone Repository
 
 ```
-    extension=mysqli
+git clone https://github.com/YOUR_USERNAME/iocage-plugin-piwigo.git
+cd iocage-plugin-piwigo
 ```
 
-<h6>Nginx
+### 2️⃣ Edit Configuration
+
+Edit:
 
 ```
-    proxy_connect_timeout 600s
-    proxy_send_timeout 600s
-    proxy_read_timeout 600s
-    fastcgi_send_timeout 600s
-    fastcgi_read_timeout 600s
-
-    pm.max_children = 35
-    pm.start_servers = 15
-    pm.min_spare_servers = 15
-    pm.max_spare_servers = 20
-
-    request_terminate_timeout = 300
+includes/piwigo-config.txt
 ```
 
-<h2> <h2>Gallery View
+Set your:
 
-![Piwigo Gallery View - Theme Modus](https://i.imgur.com/OfVd8fUl.jpg)
+- JAIL_NAME
+- DB_PATH (must already exist as ZFS dataset)
+- TIMEZONE
+- POOL_PATH
 
-![Piwigo Dashboard View](https://i.imgur.com/hPlxgwbl.jpg)
+⚠ The script **will NOT create the ZFS dataset automatically**.  
+You must create it manually first:
 
-## Update... 9/1/2024
-
-I successfully updated my iocage Release 12.2 to 13.1, this is my procedure:
-<h6>outside the iocage
-
-```
-iocage upgrade -r 13.1 piwigo
-
-Note: This will take some time
-- Type "y" for yes when inquiries occur
-- Type "q" for "quit" when the validation list appears, you may need to type it several times depending on the number of affected items
-- Type "y" for yes for any additional inquiries
-```
-
-<h6>inside the iocage
+Example:
 
 ```
-pkg update && pkg upgrade -y
-
-pkg install php83 php83-session php83-mysqli nginx mariadb105-server ImageMagick7-nox11 git php83-exif php83-filter php83-gd php83-mbstring php83-zip php83-zlib php83-pecl-json_post finfo php83-fileinfo
+zfs create WebData/piwigodb
 ```
-Than restart iocage and log in to your gallery. I had an option to upgrade Piwigo to 14.1.0 ;)
 
-![Piwigo Maintenance View](https://i.imgur.com/CaKbBkHl.png)
+Then verify it exists:
 
+```
+/mnt/WebData/piwigodb
+```
+
+---
+
+### 3️⃣ Make Script Executable
+
+```
+chmod +x piwigo_install.sh
+```
+
+---
+
+### 4️⃣ Run Installer
+
+```
+./piwigo_install.sh
+```
+
+After installation completes, credentials will be displayed and saved inside the jail:
+
+```
+/Piwigo-Info.txt
+```
+
+---
+
+# Install Notes
+
+- Initial setup from the WebUI requires you to change the database address to **127.0.0.1** instead of **localhost**, or it will fail.
+
+Correct setting during first Piwigo setup:
+
+```
+Host: 127.0.0.1
+```
+
+---
+
+# Variables
+
+These are the variables that are available to change along with their defaults and a description of what they do.
+
+Other variables should be left at default unless you have a good reason to change them.
+
+---
+
+### PHP_VERSION
+- PHP version to use  
+- Defaults to 8.3.29
+
+### MARIADB_VERSION
+- MariaDB version to use  
+- Defaults to 10.11.15-MariaDB
+
+---
+
+# Mount Points (Recommended)
+
+These should be mounted outside the jail if you want persistent storage:
+
+- `/usr/local/www/piwigo/local/config` – config directory (database connection)
+- `/usr/local/www/piwigo/galleries` – gallery storage
+- `/usr/local/www/piwigo/upload` – uploads directory
+- `/var/db/mysql` – database directory (ZFS dataset recommended)
+
+---
+
+# PHP Tuning (Already Applied by Script)
+
+The installer applies:
+
+```
+memory_limit = 512M
+upload_max_filesize = 100M
+post_max_size = 100M
+max_execution_time = 300
+```
+
+The required `mysqli` extension is installed automatically via:
+
+```
+php83-mysqli
+```
+
+No manual enabling is required.
+
+---
+
+# Caddy Tuning (Optional Advanced)
+
+If running large galleries or heavy uploads, consider adjusting Caddy settings.
+
+Example improved Caddyfile:
+
+```
+:80 {
+
+    root * /usr/local/www/piwigo
+
+    php_fastcgi 127.0.0.1:9000 {
+        read_timeout 600s
+        write_timeout 600s
+    }
+
+    encode gzip zstd
+
+    file_server
+}
+```
+
+You may also tune PHP-FPM pool settings:
+
+```
+pm = dynamic
+pm.max_children = 35
+pm.start_servers = 10
+pm.min_spare_servers = 5
+pm.max_spare_servers = 20
+request_terminate_timeout = 300
+```
+
+These settings are optional and depend on your RAM and CPU.
+
+---
+
+# Upgrade Jail Release
+
+To upgrade jail base version:
+
+Outside the jail:
+
+```
+iocage upgrade -r 13.5-RELEASE Piwigo135
+```
+
+Inside the jail:
+
+```
+pkg update
+pkg upgrade -y
+```
+
+---
+
+# Screenshots
+
+Gallery view:
+
+![Gallery View](https://i.imgur.com/OfVd8fUl.jpg)
+
+Dashboard view:
+
+![Dashboard](https://i.imgur.com/hPlxgwbl.jpg)
+
+---
+
+# Notes
+
+- This is NOT an official iXsystems plugin.
+- This is a manual jail installer script.
+- Designed for advanced TrueNAS users.
+- Uses Caddy instead of nginx.
+
+---
+
+# Version
+
+- TrueNAS Target: 13.5-RELEASE
+- Script Version: v1.2
+- Piwigo Version: 16.2.0
+
+---
+
+Enjoy your self-hosted gallery 🚀
