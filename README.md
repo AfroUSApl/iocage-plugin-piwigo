@@ -185,6 +185,54 @@ request_terminate_timeout = 300
 
 These settings are optional and depend on your RAM and CPU.
 
+-# MariaDB Tuning (Optional Advanced)
+
+The installer applies safe and performance-oriented MariaDB settings
+via a dedicated configuration file:
+
+```
+/usr/local/etc/mysql/conf.d/piwigo.cnf
+```
+
+Example configuration:
+
+```
+[mysqld]
+bind-address=127.0.0.1
+innodb_buffer_pool_size=256M
+innodb_log_file_size=64M
+max_connections=100
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+```
+
+### Recommended Values Based on Jail RAM
+
+For small / medium deployments (2–4GB RAM):
+
+```
+innodb_buffer_pool_size=256M
+innodb_log_file_size=64M
+```
+
+For larger galleries (4GB+ RAM):
+
+```
+innodb_buffer_pool_size=512M
+innodb_log_file_size=128M
+```
+
+For heavy usage (8GB+ RAM):
+
+```
+innodb_buffer_pool_size=1G
+```
+
+---
+
+These settings are optional but recommended for production environments.  
+Adjust values according to available RAM and workload.
+
 ---
 
 # Upgrade Jail Release

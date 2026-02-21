@@ -113,8 +113,8 @@ iocage exec ${JAIL_NAME} pkg install -y \
 cat <<EOF | iocage exec ${JAIL_NAME} tee /usr/local/etc/mysql/conf.d/piwigo.cnf >/dev/null
 [mysqld]
 bind-address=127.0.0.1
-innodb_buffer_pool_size=256M
-innodb_log_file_size=64M
+innodb_buffer_pool_size=512M
+innodb_log_file_size=128M
 max_connections=100
 character-set-server=utf8mb4
 collation-server=utf8mb4_unicode_ci
