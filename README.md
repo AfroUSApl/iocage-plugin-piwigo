@@ -21,7 +21,7 @@ This script installs:
 - Jail: 13.5-RELEASE
 - Piwigo 16.2.0
 
-![Piwigo Installation Successful](images/first_install.jpg)
+![Piwigo First Installation Page](images/first-install.jpg)
 
 ---
 
@@ -210,11 +210,11 @@ pkg upgrade -y
 
 Gallery view:
 
-![Gallery View](https://i.imgur.com/OfVd8fUl.jpg)
+![Piwigo Gallery View](images/piwigo-gallery.jpg)
 
 Dashboard view:
 
-![Dashboard](https://i.imgur.com/hPlxgwbl.jpg)
+![Piwigo Environment Info](images/piwigo-environment.jpg)
 
 ---
 
