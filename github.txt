@@ -1,0 +1,589 @@
+     1	14:25	cd mnt/DATA
+     2	14:25	cd /mnt/DATA
+     3	14:25	ls -l
+     4	14:27	chown -R root:media /mnt/DATA/Dokumenty /mnt/DATA/Bajki /mnt/DATA/MavicPro /mnt/DATA/Config_Backup /mnt/DATA/NaszePojazdy
+     5	14:27	chmod -R 775 /mnt/DATA/Dokumenty /mnt/DATA/Bajki /mnt/DATA/MavicPro /mnt/DATA/Config_Backup /mnt/DATA/NaszePojazdy
+     6	14:28	chmod -R 775 /mnt/DATA/Dokumenty /mnt/DATA/Bajki /mnt/DATA/MavicPro /mnt/DATA/Config_Backup /mnt/DATA/NaszePojazdy
+     7	14:28	chmod -R 775 /mnt/DATA/Dokumenty /mnt/DATA/Bajki /mnt/DATA/MavicPro /mnt/DATA/Config_Backup /mnt/DATA/NaszePojazdy
+     8	14:28	chmod -R 775 /mnt/DATA/Dokumenty /mnt/DATA/Bajki /mnt/DATA/MavicPro /mnt/DATA/Config_Backup /mnt/DATA/NaszePojazdy
+     9	14:28	chmod g+s /mnt/DATA/Dokumenty /mnt/DATA/Bajki /mnt/DATA/MavicPro /mnt/DATA/Config_Backup /mnt/DATA/NaszePojazdy
+    10	14:28	ls -l
+    11	14:29	chown -R root:media /mnt/DATA/iPhoneShortVideo
+    12	14:29	chmod -R 775 /mnt/DATA/iPhoneShortVideo
+    13	14:29	chmod g+s /mnt/DATA/iPhoneShortVideo
+    14	14:29	ls -l
+    15	14:30	chown -R root:media /mnt/DATA/Smart_Phone
+    16	14:30	chmod -R 775 /mnt/DATA/Smart_Phone
+    17	14:30	chmod g+s /mnt/DATA/Smart_Phone
+    18	14:30	chown -R root:media /mnt/DATA/Windows /mnt/DATA/Windows22H2Backup
+    19	14:31	chmod -R 775 /mnt/DATA/Windows /mnt/DATA/Windows22H2Backup
+    20	14:32	chmod -R 775 /mnt/DATA/Windows /mnt/DATA/Windows22H2Backup
+    21	14:32	chmod g+s /mnt/DATA/Windows /mnt/DATA/Windows22H2Backup
+    22	14:32	ls -l
+    23	14:32	jls
+    24	14:32	iocage console transmission
+    25	14:33	jls
+    26	15:01	ls -l
+    27	15:01	cd Zdjecia
+    28	15:01	ls -l
+    29	15:17	cd /mnt/WebDATA
+    30	15:17	ls -l
+    31	15:18	cd /mnt/WebDATA
+    32	15:18	cd .
+    33	15:18	cd ..
+    34	15:18	cd ..
+    35	15:18	cd WebDATA
+    36	15:18	ls
+    37	15:18	cd WebData
+    38	15:18	ls -l
+    39	15:20	chown -R root:media "/mnt/WebData/4K Relaxing" /mnt/WebData/Config_Backup /mnt/WebData/Discovery /mnt/WebData/Formula1
+    40	15:20	chmod -R 775 "/mnt/WebData/4K Relaxing" /mnt/WebData/Config_Backup /mnt/WebData/Discovery /mnt/WebData/Formula1
+    41	15:20	chmod g+s "/mnt/WebData/4K Relaxing" /mnt/WebData/Config_Backup /mnt/WebData/Discovery /mnt/WebData/Formula1
+    42	15:20	ls -l
+    43	15:20	exit
+    44	15:21	exit
+    45	15:35	ifconfig
+    46	15:37	iperf -s
+    47	15:41	ifconfig lagg0
+    48	15:46	ifconfig lagg0
+    49	15:51	ifconfig lagg0
+    50	15:51	iperf -s
+    51	15:53	ifconfig lagg0
+    52	15:53	iperf -s
+    53	15:58	ifconfig
+    54	16:02	cli
+    55	16:04	midclt call interface.query
+    56	16:17	ifconfig lagg0
+    57	16:20	ifconfig lagg0
+    58	16:25	ifconfig lagg0
+    59	16:26	midclt call interface.query | jq
+    60	16:29	midclt call interface.update X '{"lag_protocol":"LACP"}'
+    61	16:30	midclt call interface.update lagg0 '{"lag_protocol":"LACP"}'
+    62	16:30	midclt call interface.query | jq
+    63	16:30	reboot
+    64	16:55	midclt call interface.query | jq
+    65	16:56	ifconfig bge0 | grem media
+    66	16:56	ifconfig bge0 | grep media
+    67	16:56	ifconfig bge1 | grep media
+    68	16:57	sysctl net.link.lagg
+    69	16:58	iperf -s
+    70	16:58	iperf -s
+    71	17:01	netstat -i
+    72	17:02	iperf -s
+    73	17:03	iperf -s
+    74	17:03	iperf -s
+    75	17:05	iperf -s
+    76	17:17	iperf -s
+    77	17:18	iperf3 -s
+    78	17:26	exit
+    79	17:31	iperf -s
+    80	17:45	zpool iostat -v 1
+    81	17:48	zpool iostat -v 1
+    82	17:52	exit
+    83	18:22	iperf3 -s
+    84	18:23	exit
+    85	19:47	iocage console transmission
+    86	19:47	jls
+    87	19:47	iocage console piwigo
+    88	19:50	iocage console transmission
+    89	19:50	jls
+    90	19:50	iocage console plex
+    91	19:50	iocage console piwigo
+    92	20:31	iocage list
+    93	20:31	iocage get release piwigo
+    94	20:31	iocage upgrade piwigo -r 13.5-RELEASE
+    95	20:32	iocage stop piwigo
+    96	20:32	iocage snapshot piwigo pre_upgrade
+    97	20:32	iocage upgrade piwigo -r 13.5-RELEASE
+    98	20:33	iocage snapshot piwigo@pre_upgrade
+    99	20:33	iocage snapshot piwigo preupgrade
+   100	20:33	iocage snapshot --help
+   101	20:34	iocage snapshot piwigo -n pre_upgrade
+   102	20:35	iocage upgrade piwigo -r 13.5-RELEASE
+   103	20:58	iocage console piwigo
+   104	21:36	cd /mnt/DATA/piwigo/iocage-plugin-piwigo
+   105	21:37	ls -l
+   106	21:37	git remote -v
+   107	21:39	git branch
+   108	21:39	git pull origin master
+   109	21:40	git status
+   110	21:40	git add README.md piwigo.json post_install.sh
+   111	21:40	git add .
+   112	21:40	git commit -m "Upgrade plugin to FreeBSD 13.5, MariaDB 10.11, PHP 8.3"
+   113	21:40	git pull --rebase origin master
+   114	21:42	git rebase --abort
+   115	21:42	git push --force origin master
+   116	21:53	git remote set-url origin https://github.com/AfroUSApl/iocage-plugin-piwigo.git
+   117	21:54	git remote -v
+   118	21:54	git fetch origin
+   119	21:54	git push --force-with-lease origin master
+   120	21:56	git push --force-with-lease origin master
+   121	22:08	git push --force-with-lease origin master
+   122	22:09	git add .
+   123	22:09	git commit -m "Upgrade plugin to FreeBSD 13.5, MariaDB 10.11, PHP 8.3"
+   124	22:25	cd /mnt/WebData
+   125	22:25	ls
+   126	22:25	jls
+   127	22:25	iocage fetch -P -n piwigo10 -g https://raw.githubusercontent.com/AfroUSApl/iocage-plugin-piwigo/master/piwigo.json
+   128	22:26	iocage fetch -P https://raw.githubusercontent.com/AfroUSApl/iocage-plugin-piwigo/master/piwigo.json ip4_addr="re0|192.168.0.146" -n piwigo10
+   129	22:28	iocage fetch -P https://raw.githubusercontent.com/AfroUSApl/iocage-plugin-piwigo/master/piwigo ip4_addr="re0|192.168.0.146" -n piwigo10
+   130	22:29	iocage fetch -P https://github.com/AfroUSApl/iocage-plugin-piwigo.git ip4_addr="re0|192.168.0.146" -n piwigo10
+   131	22:35	cd /mnt/DATA
+   132	22:35	ls
+   133	22:37	iocage fetch -P piwigo10.json -n piwigo10
+   134	22:40	iocage list -R
+   135	22:42	iocage fetch -r 13.1-RELEASE
+   136	22:43	iocage fetch -r 13.5-RELEASE
+   137	22:43	cd /mnt/WebData
+   138	22:44	iocage list -R
+   139	22:48	iocage fetch -P piwigo10.json -n piwigo10
+   140	22:54	iocage fetch -r 13.1-RELEASE
+   141	22:56	cd /mnt/WebData
+   142	22:57	iocage list -R
+   143	23:00	iocage get pool
+   144	23:02	iocage list
+   145	23:02	cat /mnt/WebData/iocage/.iocage
+   146	23:02	iocage list -R
+   147	23:04	zfs list | grep iocage
+   148	23:04	iocage get pool
+   149	23:09	iocage get pool iocage
+   150	23:09	iocage get pool
+   151	23:09	zfs list | grep iocage
+   152	23:11	iocage deactivate DATA
+   153	23:11	iocage activate WebData
+   154	23:11	iocage list -R
+   155	23:12	iocage list -R
+   156	23:13	iocage list
+   157	23:14	zfs list | grep iocage
+   158	23:15	iocage get pool
+   159	23:15	iocage get pool piwigo
+   160	23:16	zfs get mountpoint DATA/iocage
+   161	23:16	zfs get mountpoint WebData/iocage
+   162	23:16	zfs get org.freebsd.iocage:active DATA
+   163	23:16	zfs get org.freebsd.iocage:active WebData
+   164	23:18	zfs set org.freebsd.iocage:active=NO DATA
+   165	23:18	zfs set org.freebsd.iocage:active=YES WebData
+   166	23:18	zfs get org.freebsd.iocage:active DATA
+   167	23:18	zfs get org.freebsd.iocage:active WebData
+   168	23:18	iocage list -R
+   169	23:19	iocage list -r
+   170	23:20	iocage fetch -P /mnt/DATA/piwigo10.json -n piwigo10
+   171	23:22	iocage fetch -P /mnt/DATA/piwigo10.json -n piwigo10
+   172	23:28	iocage fetch -P piwigo10 -g https://github.com/AfroUSApl/iocage-plugin-piwigo ip4_addr="interface|IPaddress"
+   173	23:48	cd /mnt/DATA/piwigo/iocage-plugin-piwigo
+   174	23:48	git checkout -b 13.5-RELEASE
+   175	23:48	git push origin 13.5-RELEASE
+   176	23:49	cd /mnt/WebData
+   177	23:49	ls
+   178	23:49	ls -l
+   179	23:50	iocage fetch -P piwigo10 -g https://github.com/AfroUSApl/iocage-plugin-piwigo ip4_addr="interface|IPaddress"
+   180	23:52	iocage fetch -P piwigo -g https://github.com/AfroUSApl/iocage-plugin-piwigo ip4_addr="interface|IPaddress"
+   181	23:53	iocage fetch -P /mnt/DATA/piwigo10.json -n piwigo10
+   182	23:56	iocage fetch -P /mnt/DATA/piwigo10.json -n
+   183	23:57	iocage fetch -P /mnt/DATA/piwigo10.json
+   184	0:20	find / -nama nextcloud-jail.sh
+   185	0:20	find / -name nextcloud-jail.sh
+   186	0:37	jobs
+   187	0:37	jobs -l
+   188	0:37	ls
+   189	0:37	ls
+   190	0:37	chmod +x piwigo-install.sh
+   191	0:37	chmod +x piwigo_install.sh
+   192	0:38	piwigo_install.sh
+   193	0:38	./piwigo_install.sh
+   194	0:45	iocage console piwigo13_5
+   195	0:46	jls
+   196	0:46	iocage console piwigo13.5
+   197	0:49	sed -i '' 's/\r$//' piwigo_install.sh
+   198	0:53	jls
+   199	0:53	iocage stop piwigo13.5
+   200	0:53	iocage destroy piwigo13.5 -f
+   201	0:53	jls
+   202	0:54	./piwigo_install.sh
+   203	0:59	iocage stop piwigo135
+   204	0:59	iocage destroy piwigo135 -f
+   205	0:59	jls
+   206	0:59	./piwigo_install.sh
+   207	1:01	iocage exec piwigo135 pkg -v
+   208	1:01	iocage stop piwigo135
+   209	1:01	iocage destroy piwigo135 -f
+   210	1:02	./piwigo_install.sh
+   211	1:09	iocage console piwigo135
+   212	1:38	iocage stop piwigo135
+   213	1:38	iocage destroy piwigo135 -f
+   214	1:38	./piwigo_install.sh
+   215	1:40	iocage console piwigo135
+   216	2:18	iocage get ip4_addr piwigo135
+   217	2:18	iocage get -a piwigo135
+   218	2:21	iocage --help
+   219	2:21	iocage get --help
+   220	2:25	iocage get dhcp piwigo135
+   221	2:25	iocage get vnet piwigo135
+   222	2:25	iocage get interfaces piwigo135
+   223	2:26	iocage exec piwigo135 hostname -I
+   224	2:26	iocage exec piwigo135 ifconfig | awk '/inet /{print $2}'
+   225	2:26	iocage exec piwigo135 ifconfig
+   226	2:27	iocage exec piwigo135 ifconfig vnet0 | awk '/inet /{print $2}'
+   227	2:27	iocage exec piwigo135 ifconfig epair0b | awk '/inet /{print $2}'
+   228	2:29	iocage exec piwigo135 ifconfig | awk '/inet / && $2 != "127.0.0.1" {print $2}'
+   229	2:30	exit
+   230	2:30	iocage stop piwigo135
+   231	2:30	ls
+   232	2:30	iocage destroy piwigo135 -f
+   233	2:30	cd /mnt/WebData
+   234	2:31	ls -l
+   235	2:31	./piwigo_install.sh
+   236	2:33	jls
+   237	2:33	iocage stop piwigo135
+   238	2:33	iocage destroy piwigo135 -f
+   239	2:33	jls
+   240	2:33	./piwigo_install.sh
+   241	2:37	iocage console piwigo135
+   242	2:38	iocage stop piwigo135
+   243	2:38	iocage destroy piwigo135 -f
+   244	2:52	iocage console piwigo135
+   245	2:52	./piwigo_install.sh
+   246	2:53	iocage destroy piwigo135 -f
+   247	2:54	./piwigo_install.sh
+   248	3:11	iocage destroy piwigo135 -f
+   249	3:12	./piwigo_install.sh
+   250	3:15	top
+   251	3:25	iocage stop piwigo135
+   252	3:25	iocage destroy piwigo135 -f
+   253	3:26	./piwigo_install.sh
+   254	3:36	iocage stop piwigo135
+   255	3:36	iocage destroy piwigo135 -f
+   256	3:36	./piwigo_install.sh
+   257	3:37	./piwigo_install.sh
+   258	3:42	iocage stop piwigo135
+   259	3:42	iocage destroy piwigo135 -f
+   260	3:42	./piwigo_install.sh
+   261	3:45	iocage stop piwigo135
+   262	3:45	iocage destroy piwigo135 -f
+   263	3:47	./piwigo_install.sh
+   264	3:58	jls
+   265	3:58	iocage console piwigo135
+   266	4:14	iocage stop piwigo135
+   267	4:14	iocage destroy piwigo135 -f
+   268	4:14	ls
+   269	4:14	./piwigo_install.sh
+   270	4:31	iocage console piwigo135
+   271	4:44	./piwigo_install.sh
+   272	5:17	./piwigo_install2.sh
+   273	5:18	chmod +x piwigo_install2.sh
+   274	5:18	./piwigo_install2.sh
+   275	5:19	./piwigo_install2.sh
+   276	5:25	iocage destroy piwigo13 -f
+   277	5:25	./piwigo_install2.sh
+   278	12:45	ls -l
+   279	12:45	cd /mnt/DATA
+   280	12:45	ls
+   281	12:45	cd piwigo
+   282	12:45	ls
+   283	12:45	cd iocage-plugin-piwigo
+   284	12:45	ls
+   285	12:47	git add .
+   286	12:48	git commit -m "Upgrate to auto-installation on TrueNAS 13.0, 13.5-RELEASE, MariaDB 10.11, PHP 8.3"
+   287	12:48	git push
+   288	12:49	git push --set-upstream origin 13.5-RELEASE
+   289	12:50	ssh-keygen -t ed25519 -C "tomasz.kanarski@gmail.com"
+   290	12:50	ssh-keygen -t ed25519 -C "tomasz.kanarski@gmail.com"
+   291	12:52	git remote -v
+   292	12:53	git config --global credential.helper store
+   293	12:55	git remote -v
+   294	12:55	git config --global credential.helper store
+   295	12:56	git push
+   296	12:57	git push
+   297	13:04	git push
+   298	13:04	git add .
+   299	13:04	git commit -m "Uppdate first install.jpg"
+   300	13:05	git push
+   301	13:06	git commit -m "Uppdate first install.jpg"
+   302	13:06	git push
+   303	13:07	git add .
+   304	13:07	git commit -m "Uppdate first install.jpg"
+   305	13:07	git push
+   306	13:07	git rm -r --cached .git-credentials
+   307	13:08	rm -rf .git-credentials
+   308	13:09	git rm -r --cached .git-credentials
+   309	13:09	git commit --amend
+   310	13:09	git push --force-with-lease origin 13.5-RELEASE
+   311	13:13	git add .
+   312	13:13	git push --force-with-lease origin 13.5-RELEASE
+   313	13:14	git push --force-with-lease origin 13.5-RELEASE
+   314	13:14	git add .gitignore
+   315	13:15	echo ".git-credentials/" >> .gitignore
+   316	13:15	git commit -m "Ignore credentials directory"
+   317	13:15	git push --force-with-lease
+   318	13:18	git checkout master
+   319	13:18	git branch -D 13.5-RELEASE
+   320	13:18	git checkout -b 13.5-RELEASE
+   321	13:18	rm -rf .git-credentials
+   322	13:19	echo ".git-credentials/" >> .gitignore
+   323	13:19	echo ".git-credentials" >> .gitignore
+   324	13:19	git add .gitignore
+   325	13:19	git commit -m "Ignore credentials"
+   326	13:19	git add .
+   327	13:19	git commit -m "Clean 13.5 release without credentials"
+   328	13:19	git push --set-upstream origin 13.5-RELEASE
+   329	13:20	git push --force-with-lease origin 13.5-RELEASE
+   330	13:20	git push
+   331	13:27	git add .
+   332	13:27	git commit -m "Upgrate to auto-installation on TrueNAS 13.0, 13.5-RELEASE, MariaDB 10.11, PHP 8.3"
+   333	13:27	git push
+   334	13:28	git push --set-upstream origin 13.5-RELEASE
+   335	13:29	git push
+   336	13:29	git add .
+   337	13:30	git commit -m "new readme.md"
+   338	13:30	git push
+   339	13:32	git add .
+   340	13:32	git commit -m "new readme.md v2"
+   341	13:32	git push
+   342	13:41	git add .
+   343	13:41	git commit -m "new update v1.3"
+   344	13:41	git push
+   345	13:52	git add .
+   346	13:52	git commit -m "new update v1.4"
+   347	13:52	git push
+   348	13:53	git add .
+   349	13:53	git commit -m "new update readme.md"
+   350	13:53	git push
+   351	13:54	git add .
+   352	13:54	git commit -m "new update readme.md 1"
+   353	13:54	git push
+   354	13:57	git add .
+   355	13:57	git commit -m "new update readme.md 2"
+   356	13:57	git push
+   357	14:09	git add .
+   358	14:09	git commit -m "new update readme.md 3"
+   359	14:09	git push
+   360	14:09	git push --set-upstream origin 13.5-RELEASE
+   361	14:10	git pull
+   362	14:11	git pull --rebase origin 13.5-RELEASE
+   363	14:12	git commit -m "new update readme.md 3"
+   364	14:12	git add .
+   365	14:12	git commit -m "new update readme.md 3"
+   366	14:12	git push
+   367	14:13	git fetch origin
+   368	14:13	git rebase origin/13.5-RELEASE
+   369	14:13	git push
+   370	14:15	git add .
+   371	14:15	git commit -m "new update readme.md 4"
+   372	14:15	git push
+   373	14:43	jls
+   374	14:43	iocage console piwigo
+   375	14:48	iocage console piwigo
+   376	14:50	iocage console piwigo
+   377	15:20	iocage restart
+   378	15:20	iocage restart piwigo
+   379	15:23	iocage console piwigo
+   380	15:28	jls
+   381	15:39	git add .
+   382	15:39	git commit -m "new update readme.md 5"
+   383	15:39	git push
+   384	15:42	git add .
+   385	15:42	git commit -m "new update readme.md 6"
+   386	15:42	git push
+   387	20:44	cd v1.5
+   388	20:44	ls
+   389	20:44	ls
+   390	20:44	chmod +x piwigo_install.sh
+   391	20:44	ls
+   392	20:44	./piwigo_install.sh
+   393	20:45	jls
+   394	20:45	./piwigo_install.sh
+   395	20:48	./piwigo_install.sh
+   396	20:48	./piwigo_install.sh
+   397	21:00	./piwigo_install.sh
+   398	21:06	jls
+   399	21:06	iocage console PiwigoNginx
+   400	21:15	iocage stop PiwigoNginx
+   401	21:15	iocage destroy PiwigoNginx -f
+   402	21:16	./piwigo_install.sh
+   403	21:19	iocage console PiwigoNginx
+   404	21:19	iocage stop PiwigoNginx
+   405	21:20	iocage destroy PiwigoNginx -f
+   406	21:20	./piwigo_install.sh
+   407	21:26	jls
+   408	21:26	iocage console piwigo135
+   409	21:29	iocage console PiwigoNginx
+   410	21:30	iocage stop PiwigoNginx
+   411	21:30	iocage destroy PiwigoNginx -f
+   412	21:31	./piwigo_install.sh
+   413	21:48	iocage console PiwigoNginx
+   414	22:54	iocage stop PiwigoNginx
+   415	22:54	iocage destroy PiwigoNginx -f
+   416	22:54	./piwigo_install.sh
+   417	23:04	iocage console PiwigoNginx
+   418	23:33	iocage stop PiwigoNginx
+   419	23:33	iocage destroy PiwigoNginx -f
+   420	23:33	./piwigo_install.sh
+   421	23:43	iocage stop PiwigoNginx
+   422	23:44	iocage destroy PiwigoNginx -f
+   423	23:44	./piwigo_install.sh
+   424	23:55	iocage stop PiwigoNginx
+   425	23:55	iocage destroy PiwigoNginx -f
+   426	23:56	./piwigo_install.sh
+   427	0:02	iocage destroy PiwigoNginx -f
+   428	0:02	./piwigo_install.sh
+   429	0:07	iocage destroy PiwigoNginx -f
+   430	0:08	./piwigo_install.sh
+   431	0:14	iocage console PiwigoNginx
+   432	0:36	jls
+   433	0:37	iocage destroy piwigo135 -f
+   434	1:06	./piwigo_install.sh
+   435	1:07	./piwigo_install.sh
+   436	1:13	./piwigo_install.sh
+   437	1:15	./piwigo_install.sh
+   438	1:23	./piwigo_install.sh
+   439	1:24	ls -l
+   440	1:24	ls -l
+   441	1:24	ls -l /mnt/DATA
+   442	1:24	./piwigo_install.sh
+   443	1:26	iocage console PiwigoNginx
+   444	1:29	./piwigo_install.sh
+   445	1:29	./piwigo_install.sh
+   446	1:30	./piwigo_install.sh
+   447	1:38	./piwigo_install.sh
+   448	1:42	./piwigo_install.sh
+   449	1:44	./piwigo_install.sh
+   450	1:44	./piwigo_install.sh
+   451	1:45	./piwigo_install.sh
+   452	1:46	./piwigo_install.sh
+   453	1:46	./piwigo_install.sh
+   454	1:46	iocage destroy Piwigo_135 -f
+   455	1:47	jls
+   456	1:47	iocage destroy PiwigoNginx -f
+   457	1:48	jls
+   458	1:48	./piwigo_install.sh
+   459	1:50	./piwigo_install.sh
+   460	2:02	./piwigo_install.sh
+   461	2:03	iocage console Piwigo_caddy
+   462	2:05	iocage destroy Piwigo_caddy -f
+   463	2:06	./piwigo_install.sh
+   464	2:14	iocage console Piwigo_caddy
+   465	2:30	./piwigo_install.sh
+   466	2:31	cd /
+   467	2:31	ls
+   468	2:31	cd root
+   469	2:31	ls -l
+   470	2:31	./piwigo_install.sh
+   471	2:31	su ./piwigo_install.sh
+   472	2:32	sudo ./piwigo_install.sh
+   473	2:32	./piwigo_install.sh
+   474	2:32	cd ..
+   475	2:32	cd ..
+   476	2:32	ls -l
+   477	2:32	./piwigo_install.sh
+   478	2:32	cd mnt
+   479	2:32	./piwigo_install.sh
+   480	2:33	cd DATA/piwigo
+   481	2:33	ls
+   482	2:33	git
+   483	2:36	git remote -v
+   484	2:36	cd iocage-plugin-piwigo
+   485	2:36	git remote -v
+   486	2:36	git remote set-url origin https://github.com/YOUR_USERNAME/Piwigo-Jail-Auto-Installer-for-TrueNAS-iocage.git
+   487	2:36	git remote -v
+   488	2:36	git pull origin main
+   489	2:37	git remote set-url origin https://github.com/AfroUSApl/Piwigo-Jail-Auto-Installer-for-TrueNAS-iocage.git
+   490	2:37	git pull origin main
+   491	2:38	git pull origin master
+   492	2:38	git pull origin main
+   493	2:39	git fetch origin
+   494	2:39	git reset --hard origin/main
+   495	2:40	git status
+   496	2:41	git config pull.ff only
+   497	2:41	git status
+   498	2:42	git status
+   499	2:42	git add .
+   500	2:42	git status
+   501	2:43	git remote -v
+   502	2:43	git fetch
+   503	2:43	ls
+   504	2:44	ls
+   505	2:44	./piwigo_install.sh
+   506	2:45	chmod +x piwigo_install.sh
+   507	2:45	./piwigo_install.sh
+   508	2:47	git add .
+   509	2:48	git commit -m "new v2.0 files update"
+   510	2:48	git push
+   511	2:51	git status
+   512	2:51	git push origin main
+   513	2:52	git push origin 13.5-RELEASE
+   514	2:53	git checkout main
+   515	2:53	git checkout -b main
+   516	2:53	git merge 13.5-RELEASE
+   517	2:53	git push origin main
+   518	2:54	git tag
+   519	2:54	git checkout -b main
+   520	2:57	git add .
+   521	2:57	git push
+   522	3:00	git pull
+   523	3:00	git status
+   524	3:00	git add .
+   525	3:00	git push
+   526	3:00	git status
+   527	11:28	git pull
+   528	11:33	git add .
+   529	11:33	git commit -m "new update README.MD v2.0"
+   530	11:34	git push
+   531	11:39	git add .
+   532	11:39	git commit -m "new update README.MD v2.1"
+   533	11:39	git push
+   534	11:39	git add .
+   535	11:40	git commit -m "new update README.MD v2.1 images 600"
+   536	11:40	git push
+   537	11:40	git add .
+   538	11:40	git commit -m "new update README.MD v2.2 correction"
+   539	11:40	git push
+   540	11:42	git add .
+   541	11:42	git commit -m "new update README.MD v2.3"
+   542	11:42	git push
+   543	11:43	git add .
+   544	11:43	git commit -m "new update README.MD v2.3 correction"
+   545	11:43	git push
+   546	11:47	git add .
+   547	11:47	git commit -m "new update README.MD v2.4"
+   548	11:47	git push
+   549	11:48	git add .
+   550	11:48	git commit -m "new update README.MD v2.4 correction"
+   551	11:48	git push
+   552	12:04	git add .
+   553	12:04	git commit -m "new update README.MD v2.5 error-plugin image"
+   554	12:05	git push
+   555	12:45	cd DATA/piwigo
+   556	12:45	ls
+   557	12:45	ls -l
+   558	12:45	cd /mnt/DATA/piwigo
+   559	12:45	ls -l
+   560	12:46	cd piwigo_install_script
+   561	12:46	git init
+   562	12:46	git remote add origin https://github.com/AfroUSApl/iocage-plugin-piwigo.git
+   563	12:46	git remote -v
+   564	12:46	cd ..
+   565	12:46	cd iocage-plugin-piwigo
+   566	12:47	git init
+   567	12:47	git remote add origin https://github.com/AfroUSApl/iocage-plugin-piwigo.git
+   568	12:47	git remote -v
+   569	12:47	git add .
+   570	12:47	git checkout -b 13.5-RELEASE
+   571	12:47	git add .
+   572	12:47	git commit -m "Update for 13.5"
+   573	12:48	git push
+   574	12:48	ls -l
+   575	12:48	git push --set-upstream origin 13.5-RELEASE
+   576	12:50	git pull origin 13.5-RELEASE --rebase
+   577	12:51	git push --set-upstream origin 13.5-RELEASE
+   578	12:51	git remote -v
+   579	12:51	git status
+   580	12:51	git log --oneline --decorate --graph --all
+   581	12:52	git branch --set-upstream-to=origin/13.5-RELEASE 13.5-RELEASE
+   582	12:52	git push
+   583	12:52	git pull --rebase origin 13.5-RELEASE
+   584	12:52	git push -u origin 13.5-RELEASE
+   585	12:53	git pull
+   586	12:55	git add .
+   587	12:55	git commit -m "Update for 13.5"
+   588	12:55	git push
+   589	13:01	history >> github.txt
